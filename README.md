@@ -1,7 +1,6 @@
 # myProjects
+# Gafencu Mihai-Costin
 a set of personal projects
-
-#Gafencu Mihai-Costin
 
 Coletie de proiecte personale
 
