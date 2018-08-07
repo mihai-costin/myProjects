@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", sans-serif;
+    font-size: 34px;
+    color: coral;
+    text-shadow: 3px 3px 1px #000000;
+    overflow-x: hidden;
+    background: linear-gradient(grey 45%, LightYellow);
+}
+
+
+#hi,
+#buton,
+#lan,
+#searching {
+    transform: translate(50%, 50%);
+}
+
+#hi {
+    margin-top: 25%;
+    margin-right: 20%;
+}
+
+#buton {
+    margin-top: 3.5%;
+    margin-right: 20%;
+}
+
+#lan {
+    margin-top: 3%;
+    margin-right: 20%;
+    color: #808080;
+}
+
+#searching {
+    margin-right: 15%;
+}
+
+/* for screens with width > 710px */
+
+@media only screen and (min-width: 710px) {
+    body {
+        background: grey;
+    }
+
+    #hi {
+        margin-top: 15%;
+    }
+
+    #buton {
+        margin-top: 2%;
+    }
+
+    #searching {
+        margin-right: 18%;
+    }
+}
