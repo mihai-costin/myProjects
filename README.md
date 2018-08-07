@@ -8,4 +8,4 @@ Coletie de proiecte personale
 2. Hello in 95 languages (with angular)
 3. Hangman Game
 
-Proiectele contine cate trei fisiere fiecare: fisierul de index html, fisierul css si unul in care se afla codul js. Acestea sunt elaborate in timpul liber, avand ca scop repetitia si imbogatirea cunostintelor.
+Proiectele contin cate trei fisiere fiecare: fisierul de index html, fisierul css si unul in care se afla codul js. Acestea sunt elaborate in timpul liber, avand ca scop repetitia si imbogatirea cunostintelor.
