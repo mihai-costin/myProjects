@@ -2,7 +2,7 @@ var obj = [{
     lang: "Afrikaans",
     hello: "Hello Wêreld!",
     value: 0
-}, { 
+}, {
     lang: "Albanian",
     hello: "Përshendetje Botë!",
     value: 0
@@ -14,7 +14,7 @@ var obj = [{
     lang: "Armenian",
     hello: "Բարեւ աշխարհ!",
     value: 0
-},{
+}, {
     lang: "Azerbajani",
     hello: "Salam dünya!",
     value: 0
@@ -123,7 +123,7 @@ var obj = [{
     hello: "હેલો વર્લ્ડ!",
     value: 0
 }, {
-    lang: "Haitian",    
+    lang: "Haitian",
     hello: "Alo Mondyal!",
     value: 0
 }, {
@@ -179,10 +179,10 @@ var obj = [{
     value: 0
 }, {
     lang: "Kazakh",
-    hello: "Сәлем Әлем!" ,
+    hello: "Сәлем Әлем!",
     value: 0
 }, {
-    lang: "Khmer",    
+    lang: "Khmer",
     hello: "សួស្តី​ពិភពលោក!",
     value: 0
 }, {
@@ -205,7 +205,7 @@ var obj = [{
     lang: "Latin",
     hello: "Orbis Terrarum salve!",
     value: 0
-}, { 
+}, {
     lang: "Latvian",
     hello: "Sveika pasaule!",
     value: 0
@@ -383,56 +383,56 @@ var obj = [{
     value: 0
 }]; // object for the hello in every language
 
-$(document).ready(function(){
-    for(var i = 0;i<obj.length;i++)
-         obj[i].value = i;
-    
-//randomize language
-    $("#btn1").click(function(){
-    var rdn = Math.floor(Math.random()*obj.length);
-    $("#hi").html(obj[rdn].hello);
-    $("#Lang").html(obj[rdn].lang);
-});
-    
-// search a language by typing
-    $("#btn").click(function(){
-    var ser = $("#serc"); // search field -- id for text input
-    var result = binarySearch(ser.value);
-    
-    if(result > -1){
-        $("#hi").html(obj[result].hello);
-        $("#lan").html(obj[result].lang);
-    }
-    else alert("The language wasn't found! Try try again!");
-});
+$(document).ready(function () {
+    for (var i = 0; i < obj.length; i++)
+        obj[i].value = i;
 
-// for search field -- trigger the search when Enter key is pressed
-    $("serc").keyup(function(event){
+    //randomize language
+    $("#btn1").click(function () {
+        var rdn = Math.floor(Math.random() * obj.length);
+        $("#hi").html(obj[rdn].hello);
+        $("#Lang").html(obj[rdn].lang);
+    });
+
+    // search a language by typing
+    $("#btn").click(function () {
+        var ser = $("#serc"); // search field -- id for text input
+        var result = binarySearch(ser.val());
+
+        if (result > -1) {
+            $("#hi").html(obj[result].hello);
+            $("#Lang").html(obj[result].lang);
+        } else alert("The language wasn't found! Try again!");
+    });
+
+    // for search field -- trigger the search when Enter key is pressed
+    $("#serc").keyup(function (event) {
         event.preventDefault();
-        if(event.keyCode === 13)
+        if (event.keyCode === 13)
             $("#btn").click();
     });
 });
 
 // binarySearch to search for a language when the user wants to search by typing
-function binarySearch(value){
+function binarySearch(value) {
     value = value.toLowerCase();
-   
-    var first = 0, last = obj.length-1;
-    var mid = Math.floor((first+last)/2);
+
+    var first = 0,
+        last = obj.length - 1;
+    var mid = Math.floor((first + last) / 2);
     var check = false;
-    
-    do{
-        if(value === obj[mid].lang.toLowerCase()) check = true;
-        
-        else {    
-         if(value.localeCompare(obj[mid].lang.toLowerCase()) === 1)first = mid + 1;
-         else last = mid - 1;
-         
-         mid = Math.floor((first+last)/2);
+
+    do {
+        if (value === obj[mid].lang.toLowerCase()) check = true;
+
+        else {
+            if (value.localeCompare(obj[mid].lang.toLowerCase()) === 1) first = mid + 1;
+            else last = mid - 1;
+
+            mid = Math.floor((first + last) / 2);
         }
-    }while(!check && first<=last);
-    
-    if(check) return mid;
+    } while (!check && first <= last);
+
+    if (check) return mid;
     return -1;
 }

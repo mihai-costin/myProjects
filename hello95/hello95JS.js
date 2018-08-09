@@ -90,5 +90,5 @@ function search() {
     if (result > -1) {
         h.innerHTML = obj[result];
         h1.innerHTML = v.options[result].text;
-    } else alert("The language wasn't found! Try try again!");
+    } else alert("The language wasn't found! Try again!");
 }

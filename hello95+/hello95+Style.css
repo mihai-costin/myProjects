@@ -7,22 +7,23 @@ body {
     text-shadow: 3px 3px 1px #000000;
     overflow-x: hidden;
     background: linear-gradient(grey 45%, LightYellow);
-    
-	
 }
 
 
-#hi, #buton, #Lang, #searching{
+#hi,
+#buton,
+#Lang,
+#searching {
     transform: translate(50%, 50%);
 }
 
-#hi{
+#hi {
     margin-top: 25%;
     margin-right: 20%;
 }
 
-#buton{
-    margin-top: 2%;
+#buton {
+    margin-top: 3.5%;
     margin-right: 20%;
 }
 
@@ -33,16 +34,25 @@ body {
 }
 
 #searching {
-    margin-right: 18%;
+    margin-right: 15%;
 }
 
 /* for screens with width > 710px */
+
 @media only screen and (min-width: 710px) {
-    body{
+    body {
         background: grey;
     }
-    #hi{
+
+    #hi {
         margin-top: 15%;
     }
-    
+
+    #buton {
+        margin-top: 2%;
+    }
+
+    #searching {
+        margin-right: 18%;
+    }
 }

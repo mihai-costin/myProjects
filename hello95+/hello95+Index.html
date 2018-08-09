@@ -1,60 +1,63 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>My Hello World Mutlilang</title>
-		
-        <!-- encoding -->
-        <meta charset="utf-8">
-        
-        <!-- responsive -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	    <!-- angular -->
-	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-	    
-	    <!-- jquery -->
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="hello95+JS.js"></script>
-        
-        <!-- css -->
-        <link rel="stylesheet" type="text/css" href="hello95+.css" />
-	</head>
-	<body ng-app="myApp">
-	    
-	    <!-- hello  display here and the language-->
-	    <div id="hi">Hello World!</div>
-	    <div id="Lang">English</div>
-	    
-	   	    <div id="buton" ng-controller="myController">
-	        <select id="Select" ng-model="selectedName" ng-options="item for item in lang ">
+
+<head>
+    <title>My Hello World Mutlilang</title>
+
+    <!-- encoding -->
+    <meta charset="utf-8">
+
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="hello95+JS.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="hello95+Style.css" />
+</head>
+
+<body ng-app="myApp">
+
+    <!-- hello  display here and the language-->
+    <div id="hi">Hello World!</div>
+    <div id="Lang">English</div>
+
+    <div id="buton" ng-controller="myController">
+        <select id="Select" ng-model="selectedName" ng-options="item for item in lang ">
 	        </select>
-	         
-	        <!-- change the language or choose random -->
-	        <button type="button" ng-click="change()">Change</button>
-	        <button type="button" id="btn1">Random</button>
-	    </div>
-	    <!-- search a language with a text field -->
-	    <div id="searching">
-	    <input type="text" id="serc" autocomplete="on">
-	    <button type="button" id="btn">Search</button>
-		</div>
-		
-		<script>
-		    var app = angular.module("myApp",[]);
-		    app.controller("myController", function($scope){
-		        $scope.lang = [];
-		        for(var i = 0;i < obj.length;i++)
-                    $scope.lang[i] = obj[i].lang;
-                
-                $scope.change = function(){
-                    var value = $("#Select").val();
-                    value = value.replace("string:","");
-                    $("#Lang").text(value);
-                    var result = binarySearch(value);
-                    $("#hi").text(obj[result].hello);
-                };
-		    });
-		</script>
-		
-	</body>
+
+        <!-- change the language or choose random -->
+        <button type="button" ng-click="change()">Change</button>
+        <button type="button" id="btn1">Random</button>
+    </div>
+    <!-- search a language with a text field -->
+    <div id="searching">
+        <input type="text" id="serc" autocomplete="on">
+        <button type="button" id="btn">Search</button>
+    </div>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myController", function($scope) {
+            $scope.lang = [];
+            for (var i = 0; i < obj.length; i++)
+                $scope.lang[i] = obj[i].lang;
+
+            $scope.change = function() {
+                var value = $("#Select").val();
+                value = value.replace("string:", "");
+                $("#Lang").text(value);
+                var result = binarySearch(value);
+                $("#hi").text(obj[result].hello);
+            };
+        });
+    </script>
+
+</body>
+
 </html>
