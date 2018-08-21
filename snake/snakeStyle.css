@@ -26,7 +26,7 @@ body {
   z-index: 2;
   background-color: rgb(220, 220, 220);
   clear: both;
-  float: left;
+  float: left; 
   text-align: center;
   width: 200px;
   transform: translate(250px, -300px);
@@ -42,12 +42,10 @@ body {
   .helpBox {
     transform: translate(50%,-400px);
     z-index: 1;
-    display: inline-block;
     float: none;
   }
   
   .btn{
-    transform: translate(150px,-150px);
-    clear: left;
+    transform: translate(150px,800px);
   }
 }
