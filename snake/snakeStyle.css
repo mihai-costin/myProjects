@@ -1,0 +1,53 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  font-family: sans-serif;
+  color: black;
+  background-color: rgba(220, 220, 220, 0.65);
+}
+
+#myCanvas {
+  background-color: green;
+  transform: translate(25%, 0);
+  z-index: 0;
+}
+
+.btn {
+  z-index: 1;
+  position: relative;
+  transform: translate(-175px, -150px);
+}
+
+.helpBox {
+  display: none;
+  position: relative;
+  border: 1px solid black;
+  z-index: 2;
+  background-color: rgb(220, 220, 220);
+  clear: both;
+  float: left;
+  text-align: center;
+  width: 200px;
+  transform: translate(250px, -300px);
+}
+
+@media only screen and (min-width: 710px) {
+  #myCanvas {
+    width: 600px;
+    height: 600px;
+    transform: translate(85%, 0);
+  }
+  
+  .helpBox {
+    transform: translate(50%,-400px);
+    z-index: 1;
+    display: inline-block;
+    float: none;
+  }
+  
+  .btn{
+    transform: translate(150px,-150px);
+    clear: left;
+  }
+}

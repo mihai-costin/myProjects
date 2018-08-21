@@ -18,7 +18,7 @@ var obj = ["Hello Wêreld!", "Përshendetje Botë!", "ሰላም ልዑል!", "Բ
 
 //randomize language
 function rand() {
-    var rdn = Math.floor(Math.random() * 97);
+    var rdn = Math.floor(Math.random() * obj.length);
     var h = document.getElementById("hi"); // the hello
     var v = document.getElementById("sel"); // drop-down list
     h.innerHTML = obj[rdn];
