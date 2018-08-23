@@ -31,17 +31,25 @@ button:hover {
   color: white;
 }
 
-.helpBox {
+.helpBox, .scoreBox {
   display: none;
   position: relative;
   border: 1px solid black;
   z-index: 2;
   background-color: rgb(220, 220, 220);
   clear: both;
-  float: left; 
   text-align: center;
+}
+
+.helpBox{
+  float: left; 
   width: 200px;
   transform: translate(250px, -300px);
+}
+.scoreBox {
+  float: right;
+  width: 85px;
+  transform: translate(-200px,-50px);
 }
 
 @media only screen and (min-width: 710px) {
@@ -53,9 +61,12 @@ button:hover {
   
   .helpBox {
     transform: translate(0,-400px);
-    float: none;
     position: absolute;
     width: 500px;
+  }
+  
+  .scoreBox {
+    transform: translate(-400px,0);
   }
   
   .btn{
