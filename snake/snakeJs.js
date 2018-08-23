@@ -32,7 +32,6 @@ function moveSnake(){
 function draw() {
 
 if(play === false) {
-  point();
   play = true;
   $("body").on("keypress",function(event){
    if(dx>0 && dx<600 && dy>0 && dy<600)
