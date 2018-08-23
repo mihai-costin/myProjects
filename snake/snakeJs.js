@@ -5,6 +5,7 @@ var myvar;
 
 function moveSnake(){
   var $myCanvas = $("#myCanvas");
+  $myCanvas.clearCanvas();
   $myCanvas.drawRect({
     fillStyle: "Black",
     x: dx, y: dy,
@@ -17,9 +18,8 @@ function moveSnake(){
     strokeStyle: "black",
     strokeWidth: 2,
     x: 100, y: 50,
-    radius: 5
+    radius: 5 
   });
-  $myCanvas.clearCanvas();
   if(dx<0 || dx >600)
     mx = -mx;
   if(dy<0 || dy>600)
