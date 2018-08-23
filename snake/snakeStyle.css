@@ -16,7 +16,7 @@ body {
 .btn {
   z-index: 1;
   position: relative;
-  transform: translate(-175px, -150px);
+  transform: translate(-175px, 150px);
 }
 
 .helpBox {
@@ -40,12 +40,13 @@ body {
   }
   
   .helpBox {
-    transform: translate(50%,-400px);
-    z-index: 1;
+    transform: translate(0,-400px);
     float: none;
+    position: absolute;
+    width: 500px;
   }
   
   .btn{
-    transform: translate(150px,800px);
+    transform: translate(150px,50px);
   }
 }
