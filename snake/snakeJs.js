@@ -20,9 +20,9 @@ function moveSnake(){
     x: 100, y: 50,
     radius: 5 
   });
-  if(dx<0 || dx >600)
+  if(dx<0 || dx >400)
     mx = -mx;
-  if(dy<0 || dy>600)
+  if(dy<0 || dy>450)
     my = -my;
   
   dx += mx;
