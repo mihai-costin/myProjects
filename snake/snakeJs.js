@@ -1,92 +1,124 @@
-var play = false;
-var dx = 100, dy = 100;
-var mx = 4, my = 0;
-var myvar, rdnx, rdny;
-var score = 0, swidth = 50;
+var play = false; // bool variable to know when to stop the myvar interval
+var dx = 100,
+  dy = 100; // where to draw the snake (which is represented as a rectangular)
+var mx = 4,
+  my = 0; // how many px to move the snake
+var myvar, rdnx, rdny, speed = 100; // rdnx , rdny -- random generated points for the point position that needs to be catch
+// speed -- the time for setInterval
+var score = 0,
+  swidth = 50; // var for score and swidth for the width of the snake that will increase with score
 
-function moveSnake(){
+function moveSnake() {
   var $myCanvas = $("#myCanvas");
-  $myCanvas.clearCanvas();
+  $myCanvas.clearCanvas(); // clear the canvas
   $myCanvas.drawRect({
     fillStyle: "Black",
-    x: dx, y: dy,
+    x: dx,
+    y: dy,
     fromCenter: false,
     width: swidth,
     height: 10
-  });
+  }); // draw the snake
   $myCanvas.drawArc({
     fillStyle: "Grey",
     strokeStyle: "black",
     strokeWidth: 2,
-    x: rdnx, y: rdny,
-    radius: 5 
-  });
-  if(dx<0 || dx >400)
+    x: rdnx,
+    y: rdny,
+    radius: 5
+  }); // draw the point that needs to be catch by the snake
+  // check if the limits of the canvas are not passed
+  if (dx < 0 || dx > 400)
     mx = -mx;
-  if(dy<0 || dy>450)
+  if (dy < 0 || dy > 450)
     my = -my;
   
-  dx += mx;
+  dx += mx; // move
   dy += my;
-  point();
+  point(); // check if another point needs to be draw
+  // if the current point was catch
 }
 
 function draw() {
 
-if(play === false) {
-  $(".scoreBox").show();
-  play = true;
-  $("body").on("keypress",function(event){
-   //if(dx>0 && dx<600 && dy>0 && dy<600)
-    switch (event.keyCode) {
-      case 56: {
-        mx = 0;
-        my = -4;
-        break;
+  if (play === false) {
+    play = true; // able to play if the play/pause button was pressed
+    // controls for the snake
+    $("body").on("keypress", function(event) {
+      switch (event.keyCode) {
+        case 56: // up direction
+          {
+            $("#myCanvas").rotate({
+              rotate: 90,
+              x: dx, y: dy
+            });
+            mx = 0;
+            my = -4;
+            break;
+          }
+        case 52: // left direction
+          {
+            $("#myCanvas").rotate({
+              rotate: 0,
+              x:dx, y: dy
+            });
+            mx = -4;
+            my = 0;
+            break;
+          }
+        case 54: // right direction
+          {
+            $("#myCanvas").rotate({
+              rotate: 0,
+              x:dx, y:dy
+            });
+            mx = 4;
+            my = 0;
+            break;
+          }
+        case 50: // down direction
+          {
+            $("#myCanvas").rotate({
+              rotate: 90,
+              x:dx, y:dy
+            });
+            mx = 0;
+            my = 4;
+            break;
+          }
       }
-      case 52: {
-        mx = -4;
-        my = 0;
-        break;
-      }
-      case 54: {
-        mx = 4;
-        my = 0;
-        break;
-      }
-      case 50: {
-        mx = 0;
-        my = 4;
-        break;
-      }      
-    }
-  });
- randomize();
- myvar = setInterval(moveSnake,100);
- 
-}
-  else {
+    });
+    randomize(); // randomize rdnx rdny the values where the point needs to be draw
+    myvar = setInterval(moveSnake, 100); // start the game
+
+  } else {
     play = false;
-    $(".scoreBox").hide();
-    $("body").off("keypress");
-    clearInterval(myvar);
+    $("body").off("keypress"); // disable the controls
+    clearInterval(myvar); // stop the game
   }
 }
 
 function help() {
-  $(".helpBox").toggle();
+  $(".helpBox").toggle(); // hide & show the help box
 }
 
-function randomize(){
-  rdnx = Math.floor(Math.random()*450);
-  rdny = Math.floor(Math.random()*450);
+function randomize() { // randomize the position of the point that needs to be catch
+  rdnx = Math.floor(Math.random() * 450);
+  rdny = Math.floor(Math.random() * 450);
 }
 
-function point(){
-  if((dx<= rdnx+10 && dx>=rdnx-10) && (dy >= rdny-50 && dy<=rdny+50))
-    {
-      score++;
-      randomize();
-      $(".scoreBox").html("Score: " + score);
+function point() {
+  // in this function we check to see if the point was catch
+  // if we reach near the point
+  if ((dx <= rdnx + 10 && dx >= rdnx - swidth) && (dy >= rdny - 10 && dy <= rdny + 10)) {
+    if (score % 10 === 0) swidth += 25; // increase size of snake
+    if (speed > 10) { // increase speed
+      speed--;
+      clearInterval(myvar);
+      myvar = setInterval(moveSnake, speed);
     }
+    score++; // up the score
+    randomize(); // new point values
+    $(".scoreBox").html("Score: " + score); // display the score
+  }
 }

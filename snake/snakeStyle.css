@@ -7,12 +7,14 @@ body {
   background-color: rgba(220, 220, 220, 0.65);
 }
 
+/* Canvas */
 #myCanvas {
   background-color: green;
   transform: translate(25%, 0);
   z-index: 0;
 }
 
+/* play/pause & help buttons */
 .btn {
   z-index: 1;
   position: relative;
@@ -23,7 +25,6 @@ body {
   border: 1px solid grey;
   transition-duration: 0.6s;
   box-shadow: -1px 2px rgba(192, 192, 192, 0.8);
-
 }
 
 button:hover {
@@ -31,45 +32,47 @@ button:hover {
   color: white;
 }
 
-.helpBox, .scoreBox {
-  display: none;
+/* help & score box*/
+.helpBox,
+.scoreBox {
   position: relative;
   border: 1px solid black;
-  z-index: 2;
+  z-index: 1;
   background-color: rgb(220, 220, 220);
   clear: both;
   text-align: center;
 }
 
-.helpBox{
-  float: left; 
+.helpBox {
+  dispaly: none;
+  float: left;
   width: 200px;
   transform: translate(250px, -300px);
 }
+
 .scoreBox {
+  display:inline-block;
   float: right;
   width: 85px;
-  transform: translate(-200px,-50px);
+  transform: translate(-200px, -50px);
 }
 
+/* for displays with the width > 710px */
 @media only screen and (min-width: 710px) {
   #myCanvas {
     width: 600px;
     height: 600px;
     transform: translate(85%, 0);
   }
-  
   .helpBox {
-    transform: translate(0,-400px);
+    transform: translate(0, -400px);
     position: absolute;
     width: 500px;
   }
-  
   .scoreBox {
-    transform: translate(-400px,0);
+    transform: translate(-400px, 0);
   }
-  
-  .btn{
-    transform: translate(150px,50px);
+  .btn {
+    transform: translate(150px, 50px);
   }
 }

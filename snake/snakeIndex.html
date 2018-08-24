@@ -2,15 +2,22 @@
 <html>
 
 <head>
-
+  <!-- This project present a simple snake game. Note that this game has no ending (winning or game over). 
+       All there is the in the project is just for pure practice. -->
   <title>Snake Game</title>
-
+  
+  <!-- encoding -->
   <meta charset="utf-8" />
 
+  <!-- responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="stylesheet" type="text/css" href="snakeStyle.css" />
 
+  <!-- stylesheet -->
+  <link rel="stylesheet" type="text/css" href="snakeStyle.css" />
+  
+  <!-- libraries and js code 
+       use of the jcanvas library -- writed in jquery
+  -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/jcanvas.js" integrity="sha256-ZqFgz7QUEDRCvHiosY/FIao3Zg5Pmg2J4rlLTEWu4BI=" crossorigin="anonymous">
   </script>
@@ -19,12 +26,17 @@
 </head>
 
 <body>
-
+  
+  <!-- canvas for the game where the action will happen -->
   <canvas id="myCanvas" width="450" height="450">Can't open the canvas</canvas>
+  <!-- a help box and a score one for information -->
   <div class="helpBox">You move the snake by pressing: numpad8 (up), numpad2 (down), numpad4 (left) and numpad6 (right).</div>
   <div class="scoreBox">
+    Score: -
   </div>
-
+  
+  <!-- play/pause and help button -->
+  <!-- help button toggles the help box-->
   <button type="button" class="btn" onclick="draw()">Play/Pause</button>
   <button type="button" class="btn" onclick="help()">Help</button>
 
