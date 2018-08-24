@@ -8,6 +8,7 @@ body {
 }
 
 /* Canvas */
+
 #myCanvas {
   background-color: green;
   transform: translate(25%, 0);
@@ -15,6 +16,7 @@ body {
 }
 
 /* play/pause & help buttons */
+
 .btn {
   z-index: 1;
   position: relative;
@@ -33,6 +35,7 @@ button:hover {
 }
 
 /* help & score box*/
+
 .helpBox,
 .scoreBox {
   position: relative;
@@ -51,13 +54,14 @@ button:hover {
 }
 
 .scoreBox {
-  display:inline-block;
+  display: inline-block;
   float: right;
   width: 85px;
   transform: translate(-200px, -50px);
 }
 
 /* for displays with the width > 710px */
+
 @media only screen and (min-width: 710px) {
   #myCanvas {
     width: 600px;

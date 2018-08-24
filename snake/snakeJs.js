@@ -7,17 +7,25 @@ var myvar, rdnx, rdny, speed = 100; // rdnx , rdny -- random generated points fo
 // speed -- the time for setInterval
 var score = 0,
   swidth = 50; // var for score and swidth for the width of the snake that will increase with score
+var angle = 270,
+  ang = 0,
+  wid = 0,
+  tempwidth = swidth;
 
 function moveSnake() {
   var $myCanvas = $("#myCanvas");
   $myCanvas.clearCanvas(); // clear the canvas
-  $myCanvas.drawRect({
-    fillStyle: "Black",
+  $myCanvas.drawVector({
+    strokeStyle: "Black",
+    strokeWidth: 4,
     x: dx,
     y: dy,
-    fromCenter: false,
-    width: swidth,
-    height: 10
+    a1: angle,
+    l1: swidth,
+    a2: ang,
+    l2: wid,
+    startArrow: true,
+    arrowRadius: 15
   }); // draw the snake
   $myCanvas.drawArc({
     fillStyle: "Grey",
@@ -28,19 +36,22 @@ function moveSnake() {
     radius: 5
   }); // draw the point that needs to be catch by the snake
   // check if the limits of the canvas are not passed
-  if (dx < 0 || dx > 400)
+  if (dx < 0 || dx > 450)
     mx = -mx;
   if (dy < 0 || dy > 450)
     my = -my;
-  
+
   dx += mx; // move
   dy += my;
+  if (swidth != tempwidth) {
+    swidth += 10;
+    wid -= 10;
+  }
   point(); // check if another point needs to be draw
   // if the current point was catch
 }
 
 function draw() {
-  var $myCanvas = $("#myCanvas");
   if (play === false) {
     play = true; // able to play if the play/pause button was pressed
     // controls for the snake
@@ -50,30 +61,46 @@ function draw() {
           {
             mx = 0;
             my = -4;
+            ang = angle;
+            angle = 180;
+            wid = tempwidth;
+            swidth = 0;
             break;
           }
         case 52: // left direction
           {
             mx = -4;
             my = 0;
+            ang = angle;
+            angle = 90;
+            wid = tempwidth;
+            swidth = 0;
             break;
           }
         case 54: // right direction
           {
             mx = 4;
             my = 0;
+            ang = angle;
+            angle = 270;
+            wid = tempwidth;
+            swidth = 0;
             break;
           }
         case 50: // down direction
           {
             mx = 0;
             my = 4;
+            ang = angle;
+            angle = 360;
+            wid = tempwidth;
+            swidth = 0;
             break;
           }
       }
     });
     randomize(); // randomize rdnx rdny the values where the point needs to be draw
-    myvar = setInterval(moveSnake, 100); // start the game
+    myvar = setInterval(moveSnake, speed); // start the game
 
   } else {
     play = false;
@@ -94,8 +121,11 @@ function randomize() { // randomize the position of the point that needs to be c
 function point() {
   // in this function we check to see if the point was catch
   // if we reach near the point
-  if ((dx <= rdnx + 10 && dx >= rdnx - swidth) && (dy >= rdny - 10 && dy <= rdny + 10)) {
-    if (score % 10 === 0) swidth += 25; // increase size of snake if score is a multiple of 10
+  if ((dx <= rdnx + 10 && dx >= rdnx - 10) && (dy >= rdny - 10 && dy <= rdny + 10)) {
+    if (score % 10 === 0) {
+      swidth += 20; // increase size of snake if score is a multiple of 10
+      tempwidth = swidth;
+    }
     if (speed > 10) { // increase speed
       speed--;
       clearInterval(myvar);
