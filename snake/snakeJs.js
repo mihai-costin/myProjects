@@ -40,7 +40,7 @@ function moveSnake() {
 }
 
 function draw() {
-
+  var $myCanvas = $("#myCanvas");
   if (play === false) {
     play = true; // able to play if the play/pause button was pressed
     // controls for the snake
@@ -48,40 +48,24 @@ function draw() {
       switch (event.keyCode) {
         case 56: // up direction
           {
-            $("#myCanvas").rotate({
-              rotate: 90,
-              x: dx, y: dy
-            });
             mx = 0;
             my = -4;
             break;
           }
         case 52: // left direction
           {
-            $("#myCanvas").rotate({
-              rotate: 0,
-              x:dx, y: dy
-            });
             mx = -4;
             my = 0;
             break;
           }
         case 54: // right direction
           {
-            $("#myCanvas").rotate({
-              rotate: 0,
-              x:dx, y:dy
-            });
             mx = 4;
             my = 0;
             break;
           }
         case 50: // down direction
           {
-            $("#myCanvas").rotate({
-              rotate: 90,
-              x:dx, y:dy
-            });
             mx = 0;
             my = 4;
             break;
@@ -111,7 +95,7 @@ function point() {
   // in this function we check to see if the point was catch
   // if we reach near the point
   if ((dx <= rdnx + 10 && dx >= rdnx - swidth) && (dy >= rdny - 10 && dy <= rdny + 10)) {
-    if (score % 10 === 0) swidth += 25; // increase size of snake
+    if (score % 10 === 0) swidth += 25; // increase size of snake if score is a multiple of 10
     if (speed > 10) { // increase speed
       speed--;
       clearInterval(myvar);

@@ -44,7 +44,7 @@ button:hover {
 }
 
 .helpBox {
-  dispaly: none;
+  display: none;
   float: left;
   width: 200px;
   transform: translate(250px, -300px);
