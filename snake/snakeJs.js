@@ -1,6 +1,6 @@
 var play = false; // bool variable to know when to stop the myvar interval
 var dx = 100,
-  dy = 100; // where to draw the snake (which is represented as a rectangular)
+  dy = 100; // where to draw the snake
 var mx = 4,
   my = 0; // how many px to move the snake
 var myvar, rdnx, rdny, speed = 100; // rdnx , rdny -- random generated points for the point position that needs to be catch
@@ -11,6 +11,9 @@ var angle = 270,
   ang = 0,
   wid = 0,
   tempwidth = swidth;
+// angle -- the angle at which the vector is draw
+// ang and wid are used when the direction is change --  for creating the effect of a snake
+// tempwidth -- keeps the actual width of the snake
 
 function moveSnake() {
   var $myCanvas = $("#myCanvas");
@@ -26,7 +29,7 @@ function moveSnake() {
     l2: wid,
     startArrow: true,
     arrowRadius: 15
-  }); // draw the snake
+  }); // draw the snake using a vector
   $myCanvas.drawArc({
     fillStyle: "Grey",
     strokeStyle: "black",
@@ -35,20 +38,34 @@ function moveSnake() {
     y: rdny,
     radius: 5
   }); // draw the point that needs to be catch by the snake
-  // check if the limits of the canvas are not passed
+  // check if the limits of the canvas are passed
   if (dx < 0 || dx > 450)
-    mx = -mx;
+    mx = -mx; // push back the snake
   if (dy < 0 || dy > 450)
     my = -my;
 
   dx += mx; // move
   dy += my;
+
+  // if a change in direction happens
+  // swidth increase in the new direction
+  // while wid is the old position that will decrease
   if (swidth != tempwidth) {
     swidth += 10;
     wid -= 10;
   }
   point(); // check if another point needs to be draw
   // if the current point was catch
+}
+
+// function the update the values when a change in direction happens
+function change(x, y, a1, a2, l1, l2) {
+  mx = x;
+  my = y;
+  ang = a1; // old angle
+  angle = a2; //  new angle
+  wid = l1; // width in the old position
+  swidth = l2; // width that will increase in the new position
 }
 
 function draw() {
@@ -59,42 +76,22 @@ function draw() {
       switch (event.keyCode) {
         case 56: // up direction
           {
-            mx = 0;
-            my = -4;
-            ang = angle;
-            angle = 180;
-            wid = tempwidth;
-            swidth = 0;
+            change(0, -4, angle, 180, tempwidth, 0);
             break;
           }
         case 52: // left direction
           {
-            mx = -4;
-            my = 0;
-            ang = angle;
-            angle = 90;
-            wid = tempwidth;
-            swidth = 0;
+            change(-4, 0, angle, 90, tempwidth, 0);
             break;
           }
         case 54: // right direction
           {
-            mx = 4;
-            my = 0;
-            ang = angle;
-            angle = 270;
-            wid = tempwidth;
-            swidth = 0;
+            change(4, 0, angle, 270, tempwidth, 0);
             break;
           }
         case 50: // down direction
           {
-            mx = 0;
-            my = 4;
-            ang = angle;
-            angle = 360;
-            wid = tempwidth;
-            swidth = 0;
+            change(0, 4, angle, 360, tempwidth, 0);
             break;
           }
       }
@@ -120,11 +117,14 @@ function randomize() { // randomize the position of the point that needs to be c
 
 function point() {
   // in this function we check to see if the point was catch
-  // if we reach near the point
+  // if we reach near the point then catch it
   if ((dx <= rdnx + 10 && dx >= rdnx - 10) && (dy >= rdny - 10 && dy <= rdny + 10)) {
     if (score % 10 === 0) {
-      swidth += 20; // increase size of snake if score is a multiple of 10
-      tempwidth = swidth;
+      tempwidth += 20; // increase size of snake if score is a multiple of 10
+      // added to tempwidth not to enter in conflict when swdith change value 
+      //when a change in direction happens
+      swidth = tempwidth; // the new width
+      if (wid > 0) wid = 0; // delete the old width
     }
     if (speed > 10) { // increase speed
       speed--;
