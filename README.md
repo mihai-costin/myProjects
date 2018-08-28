@@ -10,4 +10,5 @@ Colectie de proiecte personale
 4. Snake Game (jquery, using the jcanvas library)
 5. simpleSite (one page angularjs site + jquery, adaptation of the simpleSite project found in my repositories)
 
-Proiectele contin cate trei fisiere fiecare: fisierul de index html, fisierul css si unul in care se afla codul js. Acestea sunt elaborate in timpul liber, avand ca scop repetitia si imbogatirea cunostintelor.
+Proiectele contin cate trei fisiere fiecare: fisierul de index html, fisierul css si unul in care se afla codul js. 
+Acestea sunt elaborate in timpul liber, avand ca scop repetitia si imbogatirea cunostintelor.
