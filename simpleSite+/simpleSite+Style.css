@@ -1,220 +1,223 @@
 * {
-    margin: 0;
-    padding: 0;
-    transition: 0.1s;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  transition: 0.1s;
+  overflow-x: hidden;
 }
 
 body {
-    font-family: "Roboto Condesed", sans-serif;
-    text-align: left;
-    font-size: 18px;
-    color: black;
+  font-family: "Roboto Condesed", sans-serif;
+  text-align: left;
+  font-size: 18px;
+  color: black;
 }
 
 .container {
-    max-width: 600px;
-    margin: 0 auto;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 h3 {
-    color: #008000;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+  color: #008000;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .disabled h3 {
-    color: #e50000;
-    cursor: not-allowed;
+  color: #e50000;
+  cursor: not-allowed;
 }
 
 .buttonActive {
-    color: #008000;
-    background-color: #535353;
+  color: #008000;
+  background-color: #535353;
 }
 
+/* navigation */
+
 nav {
-    background-color: #696969;
-    color: #EFEFEF;
+  background-color: rgba(105, 105, 105, 0.75);
+  color: #EFEFEF;
 }
 
 nav .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.25em;
-    padding-left: 3.5em;
-    padding-right: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25em;
+  padding-left: 3.5em;
+  padding-right: 2.5em;
 }
 
 nav .container .menuButton {
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    user-select: none;
-    cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  user-select: none;
+  cursor: pointer;
 }
 
 .navMenu {
-    background-color: #535353;
-    color: #EFEFEF;
-    display: flex;
-
+  background-color: #535353;
+  color: #EFEFEF;
+  display: flex;
 }
 
 .navMenu .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navMenu .container ul {
-    list-style: none;
+  list-style: none;
 }
 
 .navMenu .container .first {
-    padding-top: 0.5em;
+  padding-top: 0.5em;
 }
 
 .navMenu .container ul li {
-    padding-left: 6em;
-    padding-bottom: 0.25em;
-    padding-top: 0.10em;
-    text-transform: uppercase;
-
+  padding-left: 6em;
+  padding-bottom: 0.25em;
+  padding-top: 0.10em;
+  text-transform: uppercase;
 }
 
 .navMenu .container ul li a {
-    color: #03FC0B;
-    text-decoration: none;
+  color: #03FC0B;
+  text-decoration: none;
 }
 
 .navMenu .container ul li a:active {
-    text-decoration: underline;
-    color: coral;
+  text-decoration: underline;
+  color: coral;
 }
 
 .container .imagine {
-    padding-top: 0.5em;
-    align-items: center;
-    padding-left: 2em;
+  padding-top: 0.5em;
+  align-items: center;
+  padding-left: 2em;
 }
 
 .container .butoane {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2em;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
+/* canvas & animatie */
+
 #myCanvas {
-    display: hide;
-    background: coral;
-    border: 1px solid #cbcbcb;
+  display: hide;
+  background: coral;
+  border: 1px solid #cbcbcb;
 }
 
 .animatie {
-    width: 600px;
-    margin: 50px auto;
-    padding-left: 50px;
+  width: 600px;
+  margin: 50px auto;
+  padding-left: 50px;
 }
 
 #spinner {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 1;
-    margin: -75px 0 0 -75px;
-    border: 5px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 5px solid coral;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  margin: -75px 0 0 -75px;
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid coral;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .prop {
-    text-transform: capitalize;
-    letter-spacing: 0.1em;
-    user-select: none;
-    cursor: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  text-transform: capitalize;
+  letter-spacing: 0.1em;
+  user-select: none;
+  cursor: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .option {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .butoane {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
+/* media styles -- progress bar */
+
 #prog {
-    width: 100%;
-    height: 10px;
-    background-color: #ddd;
-    margin-bottom: 0.5em;
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  margin-bottom: 0.5em;
 }
 
 #bar {
-    width: 0px;
-    height: 10px;
-    background-color: black;
+  width: 0px;
+  height: 10px;
+  background-color: black;
 }
 
 .container audio {
-    margin-top: 5em;
-    align-items: center;
-    padding-left: 10em;
-
+  margin-top: 5em;
+  align-items: center;
+  padding-left: 10em;
 }
 
 .container .butoane {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2em;
 }
 
 .container video {
-    width: 600px;
-    margin-top: 5em;
-    padding-top: 0.5em;
-    padding-right: 100em;
-    max-width: 100%;
-    height: auto;
+  width: 600px;
+  margin-top: 5em;
+  padding-top: 0.5em;
+  padding-right: 100em;
+  max-width: 100%;
+  height: auto;
 }
 
 footer {
-    color: #EFEFEF;
-    background-color: #535353;
-    margin-top: 0.5em;
+  color: #EFEFEF;
+  background-color: #535353;
+  margin-top: 0.5em;
 }
 
 footer .container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 footer .container span {
-    user-select: none;
-    padding: 0.25em 0.25em;
-    height: 1.5em;
+  user-select: none;
+  padding: 0.25em 0.25em;
+  height: 1.5em;
 }
