@@ -1,0 +1,61 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+    font-family: sans-serif;
+    color: black;
+    background-image: url("sprite/background.jpg");
+}
+
+/* Canvas */
+
+#myCanvas {
+    background-image: url("sprite/background.jpg");
+    transform: translate(25%, 10%);
+    z-index: 0;
+}
+
+.menu {
+    position: absolute;
+}
+
+.menu,
+.exitBtn {
+    transform: translate(8%, -75%);
+}
+
+.hide,
+.exitBtn {
+    display: none;
+}
+
+.optionBox {
+    color: white;
+    display: none;
+    float: left;
+    width: 200px;
+    transform: translate(250px, -300px);
+    text-align: center;
+}
+
+/* for displays with the width > 710px */
+@media only screen and (min-width: 710px) {
+    #myCanvas {
+        width: 1500px;
+        height: 700px;
+        transform: translate(3%, 5%);
+    }
+
+    .exitBtn {
+        transform: translate(65%, -150%);
+    }
+
+    .menu {
+        transform: translate(50%, -200%);
+    }
+
+    .optionBox {
+        transform: translate(550px, -400px);
+        width: 500px;
+    }
+}
