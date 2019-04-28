@@ -199,7 +199,7 @@ function check(clicked) {
   for (var i = 0; i < choice.length; i++) {
     if (clicked === choice[i]) { // if it's matching 
       // write inside the canvas
-      ctx2.font = "2em Times New Roman"
+      ctx2.font = "2em Times New Roman";
       ctx2.fillStyle = "coral";
       ctx2.textAlign = "center";
       ctx2.fillText(choice[i], x, 70);
