@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="audio">
+    <audio id="ad" controls>
+            <source src="audio/formula1.mp3" type="audio/mpeg">
+            Tipul audio nu este suportat de browser.
+        </audio>
+  </div>
+  <div class="butoane">
+    <button type="button" onclick="prevAudio()">Anterior</button>
+    <button type="button" onclick="nextAudio()">Urmatorul</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="video">
+    <video id="vd">
+            <source src="video/UsainBolt.webm" type="video/webm">
+            Tipul video nu este suportat de browser.
+        </video>
+  </div>
+  <!-- progress bar pentru video -->
+  <div id="prog">
+    <div id="bar"></div>
+  </div>
+  <!-- controale video -->
+  <div class="butoane">
+    <button type="button" onclick="prevVideo()">Anterior</button>
+    <button id="pp" type="button" onclick="playPause()">Play</button>
+    <button id="mm" type="button" onclick="Volume()">Mute</button>
+    <button type="button" onclick="nextVideo()">Urmatorul</button>
+  </div>
+</div>
