@@ -20,7 +20,6 @@ body {
 .btn {
   z-index: 1;
   position: relative;
-  transform: translate(-175px, 100px);
   font-size: 18px;
   background-color: rgba(211, 211, 211, 0.75);
   color: darkslategrey;
@@ -50,14 +49,10 @@ button:hover {
   display: none;
   float: left;
   width: 200px;
-  transform: translate(250px, -300px);
 }
 
 .scoreBox {
-  display: inline-block;
-  float: right;
   width: 85px;
-  transform: translate(-200px, -50px);
 }
 
 /* for displays with the width > 710px */
