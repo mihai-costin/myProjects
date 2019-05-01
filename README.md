@@ -14,4 +14,4 @@ Proiectele contin cate trei fisiere fiecare: fisierul de index html, fisierul cs
 Acestea sunt elaborate in timpul liber, avand ca scop repetitia si imbogatirea cunostintelor.
 
 
-# Proiectele pot fi vizualizate pe https://www.sololearn.com/Profile/9931108#_=_
+Proiectele pot fi vizualizate pe https://www.sololearn.com/Profile/9931108#_=_
