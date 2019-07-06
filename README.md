@@ -11,5 +11,5 @@ Colectie de proiecte personale
 5. simpleSite (one page angularjs site + jquery, proiect Programare Web si Multimedia)
 
 Proiectele contin cate trei fisiere fiecare: fisierul de index html, fisierul css si unul in care se afla codul js. 
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------
 Proiectele pot fi vizualizate pe https://www.sololearn.com/Profile/9931108#_=_
