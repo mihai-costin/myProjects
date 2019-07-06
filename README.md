@@ -1,5 +1,4 @@
 # myProjects
-# Gafencu Mihai-Costin
 a set of personal projects
 
 1. Hello in 95 languages (without angular)
