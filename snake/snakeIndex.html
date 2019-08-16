@@ -18,16 +18,15 @@
 
   <!-- responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- stylesheet -->
+  
   <link rel="stylesheet" type="text/css" href="snakeStyle.css" />
 
   <!-- libraries and js code 
        use of the jcanvas library writed in jquery
   -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/jcanvas.js" integrity="sha256-ZqFgz7QUEDRCvHiosY/FIao3Zg5Pmg2J4rlLTEWu4BI=" crossorigin="anonymous">
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/min/jcanvas.min.js"></script>
+  
   <script type="text/javascript" src="snakeJs.js"></script>
 
 </head>
@@ -36,16 +35,16 @@
 
   <!-- canvas for the game where the action will happen -->
   <canvas id="myCanvas" width="450" height="450">Can't open the canvas</canvas>
-  <!-- a help box and a score one for information -->
-  <div class="helpBox">You move the snake by pressing: numpad8 (up), numpad2 (down), numpad4 (left) and numpad6 (right).</div>
   <div class="scoreBox">
     Score: -
   </div>
 
-  <!-- play/pause and help button -->
-  <!-- help button toggles the help box-->
+  <!-- play/pause button -->
   <button type="button" class="btn" onclick="draw()">Play/Pause</button>
-  <button type="button" class="btn" onclick="help()">Help</button>
+  <button class="btn" onclick="change(0, -4, angle, 180, tempwidth, 0);">W</button>
+  <button class="btn" onclick="change(0, 4, angle, 360, tempwidth, 0);">S</button>
+  <button class="btn" onclick="change(-4, 0, angle, 90, tempwidth, 0);">A</button>
+  <button class="btn" onclick="change(4, 0, angle, 270, tempwidth, 0);">D</button>
 
 </body>
 
