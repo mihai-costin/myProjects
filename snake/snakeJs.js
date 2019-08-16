@@ -39,9 +39,9 @@ function moveSnake() {
     radius: 5
   }); // draw the point that needs to be catch by the snake
   // check if the limits of the canvas are passed
-  if (dx < 0 || dx > 450)
+  if (dx < 0 || dx > $myCanvas.width())
     mx = -mx; // push back the snake
-  if (dy < 0 || dy > 450)
+  if (dy < 0 || dy > $myCanvas.height())
     my = -my;
 
   dx += mx; // move
@@ -74,22 +74,22 @@ function draw() {
     // controls for the snake
     $("body").on("keypress", function(event) {
       switch (event.keyCode) {
-        case 56: // up direction
+        case 56: case 119: // up direction
           {
             change(0, -4, angle, 180, tempwidth, 0);
             break;
           }
-        case 52: // left direction
+        case 52: case 97: // left direction
           {
             change(-4, 0, angle, 90, tempwidth, 0);
             break;
           }
-        case 54: // right direction
+        case 54: case 100: // right direction
           {
             change(4, 0, angle, 270, tempwidth, 0);
             break;
           }
-        case 50: // down direction
+        case 50: case 115:// down direction
           {
             change(0, 4, angle, 360, tempwidth, 0);
             break;
@@ -106,13 +106,10 @@ function draw() {
   }
 }
 
-function help() {
-  $(".helpBox").toggle(); // hide & show the help box
-}
-
 function randomize() { // randomize the position of the point that needs to be catch
-  rdnx = Math.floor(Math.random() * 450);
-  rdny = Math.floor(Math.random() * 450);
+  var $myCanvas = $("#myCanvas");
+  rdnx = Math.floor(Math.random() * $myCanvas.width());
+  rdny = Math.floor(Math.random() * $myCanvas.height());
 }
 
 function point() {
