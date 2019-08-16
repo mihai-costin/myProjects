@@ -15,7 +15,7 @@ body {
   z-index: 0;
 }
 
-/* play/pause & help buttons */
+/* play/pause button */
 
 .btn {
   z-index: 1;
@@ -33,9 +33,7 @@ button:hover {
   color: white;
 }
 
-/* help & score box*/
-
-.helpBox,
+/* score box*/
 .scoreBox {
   position: relative;
   border: 1px solid black;
@@ -45,33 +43,31 @@ button:hover {
   text-align: center;
 }
 
-.helpBox {
-  display: none;
-  float: left;
-  width: 200px;
-}
-
 .scoreBox {
   width: 85px;
 }
 
 /* for displays with the width > 710px */
-
 @media only screen and (min-width: 710px) {
   #myCanvas {
     width: 600px;
     height: 600px;
     transform: translate(85%, 0);
   }
-  .helpBox {
-    transform: translate(0, -400px);
-    position: absolute;
-    width: 500px;
-  }
   .scoreBox {
     transform: translate(-400px, 0);
   }
   .btn {
     transform: translate(150px, 50px);
+  }
+}
+
+/* for displays with the width < 360px */
+@media only screen and (max-width: 400px) {
+  #myCanvas {
+    transform: none;
+  }
+  .scoreBox {
+      margin-top: 0.1em;
   }
 }
