@@ -10,12 +10,11 @@
 
   <!-- responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  
+  <link rel="stylesheet" type="text/css" href="hangmanStyle.css">
+  
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-  <!-- css -->
-  <link rel="stylesheet" type="text/css" href="hangmanStyle.css">
 
   <!-- angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
@@ -52,7 +51,6 @@
   <script>
     //app definition
     var app = angular.module("myApp", []);
-
     // directive
     app.directive('appDirective', function() {
       return {
@@ -66,7 +64,6 @@
           scope.clickKey = function(info) {
             var myCanvas = document.getElementById("myCanvas");
             var ctx = myCanvas.getContext("2d");
-
             if (play === true) {
               // if new game then play this and game has not ended
               // check if the letter was pressed before
