@@ -8,6 +8,7 @@ a set of personal projects
 5. simpleSite (one page angularjs site + jquery, proiect Programare Web si Multimedia)
 6. Hit the ball game
 7. Working days in a month (calculate how many days of work are in a given month)
+8. Basic client-server request in python, using a udp or tcp connection.
 
 --------------------------------------------------------------------
 The projects are also one https://www.sololearn.com/Profile/9931108#_=_
