@@ -23,8 +23,7 @@ DELETE FROM myTB
 VALUES_ORDER = {0: "date", 1: float, 2: str}
 
 LIST_OF_HEADERS = ["CRT_DATE", "NUMBER", "DESCRIPTION"]
-##LOCAL_FOLDER = "C:\\Users\\Mihai-Costin\\Downloads\\"
-LOCAL_FOLDER = "C:\\Users\\LazyTurtle\\Downloads\\"
+LOCAL_FOLDER = "C:\\Users\\Mihai-Costin\\Downloads\\"
 
 # ==============================================================================================================
 
