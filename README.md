@@ -1,7 +1,7 @@
 # myProjects
 a set of personal projects
 
-1. Hello in 95 languages (without angular)
+1. Hello in 95 languages
 2. Hangman Game (with angular and jquery)
 3. Snake Game (jquery, using the jcanvas library)
 4. Hit the ball game
