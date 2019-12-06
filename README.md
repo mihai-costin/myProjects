@@ -10,4 +10,4 @@ a set of personal projects
 7. Generating an excel file with python and import the data from excel file to mysql database (using mysql.connector)
 
 --------------------------------------------------------------------
-The projects are also on https://www.sololearn.com/Profile/9931108#_=_
+
