@@ -8,7 +8,7 @@ import csv
 TARGET_CURR = "RON"
 FIELDS_LIST = ["DATE_OF_RETRIEVAL", "DAY_OF_WEEK", "SOURCE_CURR", "RON_AMOUNT", "EURO_AMOUNT"]
 
-DESTINATION_FOLDER = "C:\\Users\\mihai.gafencu\\Downloads"
+DESTINATION_FOLDER = "C:\\Users\\LazyTurtle\\Downloads"
 DESTINATION_FILE_PREFIX = "ExchRates_"
 DESTINATION_FILE_SUFFIX = ".csv"
 
