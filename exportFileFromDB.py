@@ -12,7 +12,7 @@ DB_TABLE_NAME = "mytb"
 SQL_SELECT_STATEMENT = " SELECT CRT_DATE, NUMBER, DESCRIPTION FROM " + DB_TABLE_NAME + \
                        " WHERE CRT_DATE < CAST(NOW() AS DATE);"
 
-LOCAL_DIRECTORY = "C:\\Users\\Mihai\\Downloads"
+LOCAL_DIRECTORY = "C:\\Users\\LazyTurtle\\Downloads"
 ROW_HEADER = 0  # from what row should the xls header start
 DATE_FIELDS = [0]
 
