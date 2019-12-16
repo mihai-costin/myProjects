@@ -36,7 +36,7 @@ def str_is_date(string):
 VALUES_ORDER = {0: str_is_date, 1: float, 2: str}
 
 LIST_OF_HEADERS = ["CRT_DATE", "NUMBER", "DESCRIPTION"]
-LOCAL_FOLDER = "C:\\Users\\Mihai\\Downloads\\"
+LOCAL_FOLDER = "C:\\Users\\LazyTurtle\\Downloads\\"
 
 # ==============================================================================================================
 
