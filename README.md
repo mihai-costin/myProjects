@@ -7,6 +7,7 @@ a set of personal projects
 4. Export a excel file from a mysql query.
 5. XLS to CSV and CSV to XLS convertor (using xlrd and xlswriter libraries)
 6. Export BNR exchange rates from xml endpoint into a csv file.
+7. Extract tables from pdf with tabula package and write it to a csv file, then load the csv in a mssql db.
 
 --------------------------------------------------------------------
 
