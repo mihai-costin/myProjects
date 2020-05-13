@@ -15,7 +15,7 @@ CREATE TABLE TST_Owner.ATPCO_Opt_Scvs_Industry_Sub_Codes(
 );
 """
 
-import pypyodbc
+import pyodbc
 from datetime import datetime
 import csv
 import tabula
@@ -75,7 +75,7 @@ def load_csv_to_db(file):
 # -----------------------------------------------------------------------------------------------------------
 
 db_host = r'DESKTOP-UL1N4CV\SQLEXPRESS'
-db_connection = pypyodbc.connect("Driver={SQL Server Native Client 11.0};"
+db_connection = pyodbc.connect("Driver={SQL Server Native Client 11.0};"
                                  "Server=" + db_host + ";Database=" + DATABASE_NAME + ";Trusted_Connection=yes;")
 
 print("Getting data from pdf file: " + FILE_NAME + " " + (datetime.now()).isoformat())
